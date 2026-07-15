@@ -1,0 +1,126 @@
+"use client";
+
+import Link from "next/link";
+import { useState } from "react";
+
+export default function SimulationPage() {
+  const [status, setStatus] = useState("Ready");
+  const [progress, setProgress] = useState(0);
+
+  const startSimulation = () => {
+    setStatus("Scanning Body...");
+
+    let value = 0;
+
+    const timer = setInterval(() => {
+      value += 10;
+      setProgress(value);
+
+      if (value >= 100) {
+        clearInterval(timer);
+        setStatus("Target Identified ✔");
+      }
+    }, 300);
+  };
+
+  return (
+    <main
+      style={{
+        minHeight: "100vh",
+        background: "#020617",
+        color: "white",
+        padding: "40px",
+      }}
+    >
+      <Link href="/" style={{ color: "#22d3ee" }}>
+        ← Back to Home
+      </Link>
+
+      <h1
+        style={{
+          fontSize: "3rem",
+          marginTop: "20px",
+        }}
+      >
+        🧬 NanoMedic AI Simulation
+      </h1>
+
+      <p
+        style={{
+          marginTop: "15px",
+          color: "#cbd5e1",
+        }}
+      >
+        This simulation demonstrates a future concept where AI-guided medical
+        nanobots detect diseased cells and deliver targeted treatment.
+      </p>
+
+      <button
+        onClick={startSimulation}
+        style={{
+          marginTop: "30px",
+          padding: "14px 28px",
+          background: "#06b6d4",
+          color: "black",
+          border: "none",
+          borderRadius: "10px",
+          fontWeight: "bold",
+          cursor: "pointer",
+        }}
+      >
+        ▶ Start Simulation
+      </button>
+
+      <div
+        style={{
+          marginTop: "40px",
+          background: "#1e293b",
+          borderRadius: "12px",
+          overflow: "hidden",
+          height: "24px",
+        }}
+      >
+        <div
+          style={{
+            width: `${progress}%`,
+            height: "100%",
+            background: "#22d3ee",
+            transition: "0.3s",
+          }}
+        />
+      </div>
+
+      <h2
+        style={{
+          marginTop: "20px",
+        }}
+      >
+        Status: {status}
+      </h2>
+
+      <div
+        style={{
+          marginTop: "50px",
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit,minmax(250px,1fr))",
+          gap: "20px",
+        }}
+      >
+        <div className="card">
+          <h3>🔍 Disease Scan</h3>
+          <p>Searching for abnormal cells throughout the body.</p>
+        </div>
+
+        <div className="card">
+          <h3>💊 Drug Delivery</h3>
+          <p>Planning targeted medication to affected tissue only.</p>
+        </div>
+
+        <div className="card">
+          <h3>📊 Live Monitoring</h3>
+          <p>Displaying simulated patient biomarkers in real time.</p>
+        </div>
+      </div>
+    </main>
+  );
+}
