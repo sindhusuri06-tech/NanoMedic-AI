@@ -1,0 +1,119 @@
+import Link from "next/link";
+
+export default function AboutPage() {
+  return (
+    <main
+      style={{
+        minHeight: "100vh",
+        background: "#020617",
+        color: "white",
+        padding: "40px",
+        fontFamily: "Arial, sans-serif",
+      }}
+    >
+      <Link
+        href="/"
+        style={{
+          color: "#22d3ee",
+          textDecoration: "none",
+        }}
+      >
+        ← Back to Home
+      </Link>
+
+      <h1
+        style={{
+          fontSize: "3rem",
+          color: "#22d3ee",
+          marginTop: "20px",
+        }}
+      >
+        🧬 About NanoMedic AI
+      </h1>
+
+      <p
+        style={{
+          marginTop: "20px",
+          lineHeight: "1.8",
+          color: "#cbd5e1",
+          fontSize: "18px",
+        }}
+      >
+        NanoMedic AI is a futuristic healthcare simulation that explores how
+        artificial intelligence and medical nanobots could transform precision
+        medicine. The platform demonstrates how microscopic AI-guided nanobots
+        might one day detect diseases early, monitor health continuously, and
+        deliver targeted treatments directly to affected cells.
+      </p>
+
+      <div
+        style={{
+          marginTop: "40px",
+          background: "#0f172a",
+          padding: "25px",
+          borderRadius: "15px",
+        }}
+      >
+        <h2 style={{ color: "#22d3ee" }}>🎯 Our Vision</h2>
+
+        <p style={{ lineHeight: "1.8", marginTop: "10px" }}>
+          We envision a future where AI-powered nanomedicine enables earlier
+          detection, more personalized treatments, and better patient outcomes
+          through intelligent, minimally invasive technologies.
+        </p>
+      </div>
+
+      <div
+        style={{
+          marginTop: "30px",
+          background: "#0f172a",
+          padding: "25px",
+          borderRadius: "15px",
+        }}
+      >
+        <h2 style={{ color: "#22d3ee" }}>⚙️ Technologies</h2>
+
+        <ul style={{ marginTop: "15px", lineHeight: "2" }}>
+          <li>GPT-5.6</li>
+          <li>Next.js</li>
+          <li>React</li>
+          <li>TypeScript</li>
+          <li>Three.js</li>
+          <li>FastAPI</li>
+          <li>Python</li>
+          <li>Tailwind CSS</li>
+        </ul>
+      </div>
+
+      <div
+        style={{
+          marginTop: "30px",
+          background: "#0f172a",
+          padding: "25px",
+          borderRadius: "15px",
+        }}
+      >
+        <h2 style={{ color: "#22d3ee" }}>🏆 OpenAI Build Week</h2>
+
+        <p style={{ lineHeight: "1.8", marginTop: "10px" }}>
+          This project was created as a future-focused educational prototype for
+          OpenAI Build Week. It is intended to demonstrate how AI and
+          nanotechnology could work together in tomorrow's healthcare systems.
+          It is not a real medical device and should not be used for diagnosis
+          or treatment.
+        </p>
+      </div>
+
+      <footer
+        style={{
+          marginTop: "60px",
+          textAlign: "center",
+          color: "#94a3b8",
+        }}
+      >
+        <p>© 2026 NanoMedic AI</p>
+        <p>Built with ❤️ using GPT-5.6, Next.js, React & FastAPI</p>
+      </footer>
+    </main>
+  );
+}
