@@ -1,0 +1,130 @@
+"use client";
+
+import Link from "next/link";
+
+export default function DashboardPage() {
+  const vitals = [
+    { name: "Heart Rate", value: "72 BPM", status: "Normal" },
+    { name: "Body Temperature", value: "36.8°C", status: "Normal" },
+    { name: "Blood Oxygen", value: "98%", status: "Excellent" },
+    { name: "Blood Pressure", value: "120/80 mmHg", status: "Normal" },
+    { name: "AI Scan", value: "No Critical Issues", status: "Healthy" },
+    {
+      name: "Nanobot Activity",
+      value: "1,024 Active",
+      status: "Monitoring",
+    },
+  ];
+
+  return (
+    <main
+      style={{
+        minHeight: "100vh",
+        background: "#020617",
+        color: "white",
+        padding: "40px",
+      }}
+    >
+      <Link href="/" style={{ color: "#22d3ee" }}>
+        ← Back to Home
+      </Link>
+
+      <h1
+        style={{
+          fontSize: "3rem",
+          marginTop: "20px",
+          color: "#22d3ee",
+        }}
+      >
+        📊 NanoMedic AI Dashboard
+      </h1>
+
+      <p
+        style={{
+          marginTop: "15px",
+          color: "#cbd5e1",
+        }}
+      >
+        Simulated patient health dashboard powered by AI-driven nanobot
+        monitoring.
+      </p>
+
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))",
+          gap: "20px",
+          marginTop: "40px",
+        }}
+      >
+        {vitals.map((item, index) => (
+          <div
+            key={index}
+            style={{
+              background: "#0f172a",
+              padding: "20px",
+              borderRadius: "15px",
+              border: "1px solid #1e293b",
+            }}
+          >
+            <h2 style={{ color: "#22d3ee" }}>{item.name}</h2>
+
+            <h3
+              style={{
+                marginTop: "10px",
+                fontSize: "28px",
+              }}
+            >
+              {item.value}
+            </h3>
+
+            <p
+              style={{
+                marginTop: "10px",
+                color: "#94a3b8",
+              }}
+            >
+              Status: {item.status}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <div
+        style={{
+          marginTop: "50px",
+          background: "#0f172a",
+          padding: "25px",
+          borderRadius: "15px",
+        }}
+      >
+        <h2 style={{ color: "#22d3ee" }}>
+          🤖 AI Health Summary
+        </h2>
+
+        <p
+          style={{
+            marginTop: "15px",
+            lineHeight: "1.8",
+            color: "#cbd5e1",
+          }}
+        >
+          NanoMedic AI simulation indicates stable vital signs. No abnormal
+          cellular activity has been detected in this demonstration. Virtual
+          nanobots continue monitoring the bloodstream and are ready to
+          simulate targeted drug delivery if an anomaly is introduced.
+        </p>
+      </div>
+
+      <footer
+        style={{
+          marginTop: "60px",
+          textAlign: "center",
+          color: "#64748b",
+        }}
+      >
+        <p>🚀 NanoMedic AI • OpenAI Build Week 2026</p>
+      </footer>
+    </main>
+  );
+}
