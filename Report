@@ -1,0 +1,83 @@
+"use client";
+
+import Link from "next/link";
+
+export default function ReportPage() {
+  const report = {
+    patient: "Demo Patient",
+    reportId: "NM-2026-001",
+    scanDate: "July 2026",
+    overallStatus: "Healthy",
+    findings: [
+      "No abnormal cellular activity detected.",
+      "Virtual nanobots completed full-body scan.",
+      "Simulated drug delivery system is on standby.",
+      "Vital signs remain within normal range."
+    ]
+  };
+
+  return (
+    <main
+      style={{
+        minHeight: "100vh",
+        background: "#020617",
+        color: "white",
+        padding: "40px"
+      }}
+    >
+      <Link href="/" style={{ color: "#22d3ee" }}>
+        ← Back to Home
+      </Link>
+
+      <h1
+        style={{
+          fontSize: "3rem",
+          color: "#22d3ee",
+          marginTop: "20px"
+        }}
+      >
+        📄 NanoMedic AI Report
+      </h1>
+
+      <div
+        style={{
+          marginTop: "30px",
+          background: "#0f172a",
+          padding: "30px",
+          borderRadius: "16px",
+          border: "1px solid #1e293b"
+        }}
+      >
+        <h2>Patient Information</h2>
+
+        <p><strong>Name:</strong> {report.patient}</p>
+        <p><strong>Report ID:</strong> {report.reportId}</p>
+        <p><strong>Scan Date:</strong> {report.scanDate}</p>
+        <p><strong>Overall Status:</strong> {report.overallStatus}</p>
+
+        <hr
+          style={{
+            margin: "25px 0",
+            borderColor: "#334155"
+          }}
+        />
+
+        <h2>AI Findings</h2>
+
+        <ul style={{ marginTop: "15px", lineHeight: "2" }}>
+          {report.findings.map((item, index) => (
+            <li key={index}>✅ {item}</li>
+          ))}
+        </ul>
+
+        <hr
+          style={{
+            margin: "25px 0",
+            borderColor: "#334155"
+          }}
+        />
+
+        <h2>AI Recommendation</h2>
+
+        <p style={{ marginTop: "10px", lineHeight: "1.8" }}>
+          Based on this <strong>simulation</strong
